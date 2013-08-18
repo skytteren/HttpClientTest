@@ -14,7 +14,7 @@ class SprayAsyncHttpClient extends HttpClient{
 	import spray.client.pipelining._
 	import scala.concurrent.duration._
 	implicit val system = ActorSystem("SprayClient")
-	implicit val futureTimeout: Timeout = 5.seconds
+	implicit val futureTimeout: Timeout = 10.seconds
 	import system.dispatcher // execution context for futures
 	
 	val pipeline: HttpRequest => Future[HttpResponse] = /*addHeader("UserAgent", "Mozilla/5.0 IsItDown.no") ~> */sendReceive

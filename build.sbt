@@ -12,3 +12,11 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "2.0.M6-SNAP34" % "test"
 
 libraryDependencies += "org.apache.httpcomponents" % "httpasyncclient" % "4.0-beta4"
 
+resolvers += "spray repo" at "http://nightlies.spray.io"
+
+libraryDependencies += "io.spray" % "spray-client" % "1.2-20130710"
+
+fork in run := true
+
+libraryDependencies += "org.eclipse.jetty" % "jetty-client" % "9.0.4.v20130625"
+

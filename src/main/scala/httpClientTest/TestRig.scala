@@ -35,7 +35,7 @@ trait TestRig {
 		urls.foreach(url => {
 			val queryStart = now
 			import akka.pattern.after
-			val timeout = after(10 seconds, system.scheduler)(Future.failed(new TimeoutException("Timeout")))
+			val timeout = after(60 seconds, system.scheduler)(Future.failed(new TimeoutException("Timeout")))
 			
 			val query = httpClient.query(url)
 			(Future firstCompletedOf Seq(query, timeout)).onComplete(_ match {

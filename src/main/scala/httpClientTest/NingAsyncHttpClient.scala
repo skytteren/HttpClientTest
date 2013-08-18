@@ -12,8 +12,8 @@ class NingAsyncHttpClient extends HttpClient {
 	val config = new AsyncHttpClientConfig.Builder().
 				setCompressionEnabled(true).
 				setAllowPoolingConnection(true).
-				setConnectionTimeoutInMs(5000).
-				setRequestTimeoutInMs(5000).
+				setConnectionTimeoutInMs(10000).
+				setRequestTimeoutInMs(10000).
 				setFollowRedirects(true).
 				setUserAgent("IsItDown.no").
 				setMaxRequestRetry(2).
