@@ -18,8 +18,6 @@ class ApacheAsyncHttpClient extends HttpClient{
             .setConnectTimeout(5000).build();
 	def httpClient = HttpAsyncClients.custom()
             .setDefaultRequestConfig(requestConfig)
-            .setMaxConnTotal(1000)
-            .setMaxConnPerRoute(100)
             .setUserAgent("Mozilla/5.0 IsItDown.no spider")
             .build();
 	def query(url: String): Future[(Int, String, Long)] = {
