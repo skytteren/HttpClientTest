@@ -44,7 +44,8 @@ trait TestRig {
 					i += 1
 					resultHandler ! OK(url, now - queryStart)
 				case Failure(throwable) =>
-					println("Failure: " + url + " " + throwable.getMessage())
+					println(i + "Failure: " + url + " " + throwable.getMessage())
+					i += 1
 					resultHandler ! Error(url, now - queryStart)
 			})
 		})
